@@ -15,39 +15,41 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
 
+import java.util.function.Function;
+
 public class ModBlocks {
 
 
-    public static final Block RUBY_BLOCK = registerBlock("ruby_block",
+    public static final Block RUBY_BLOCK = register("ruby_block",
+            Block::new,
             AbstractBlock.Settings.create().strength(5.0f, 6.0f)
                     .requiresTool().sounds(BlockSoundGroup.METAL)
-                    .mapColor(MapColor.BRIGHT_RED));
+                    .mapColor(MapColor.BRIGHT_RED),
+            true);
 
-    public static final Block CHOCOLATE_BLOCK = registerBlock("chocolate_block",
-            AbstractBlock.Settings.create().strength(0.3f, 0.3f)
+    public static final Block CHOCOLATE_BLOCK = register("chocolate_block",
+            Block::new,
+            AbstractBlock.Settings.create().strength(0.2f, 0.3f)
                     .sounds(BlockSoundGroup.TUFF)
-                    .mapColor(MapColor.TERRACOTTA_BROWN));
+                    .mapColor(MapColor.TERRACOTTA_BROWN),
+            true);
 
-
-
-
-
-    private static Block registerBlock(String name, AbstractBlock.Settings blockSettings) {
-        RegistryKey<Block> key = RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(DcdaeTools.MOD_ID, name));
-        Block block = new Block(blockSettings.registryKey(key));
-        registerBlockItem(name, block);
-        return Registry.register(Registries.BLOCK, key, block);
+    private static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings, boolean shouldRegisterItem) {
+        RegistryKey<Block> blockKey = keyOfBlock(name);
+        Block block = blockFactory.apply(settings.registryKey(blockKey));
+        if (shouldRegisterItem) {
+            RegistryKey<Item> itemKey = keyOfItem(name);
+            BlockItem blockItem = new BlockItem(block, new Item.Settings().registryKey(itemKey));
+            Registry.register(Registries.ITEM, itemKey, blockItem);
+        }
+        return Registry.register(Registries.BLOCK, blockKey, block);
     }
-
-
-    private static void registerBlockItem(String name, Block block) {
-        RegistryKey<Item> key = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(DcdaeTools.MOD_ID, name));
-        BlockItem item = new BlockItem(block, new Item.Settings().registryKey(key));
-        Registry.register(Registries.ITEM, key, item);
+    private static RegistryKey<Block> keyOfBlock(String name) {
+        return RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(DcdaeTools.MOD_ID, name));
     }
-
-
-
+    private static RegistryKey<Item> keyOfItem(String name) {
+        return RegistryKey.of(RegistryKeys.ITEM, Identifier.of(DcdaeTools.MOD_ID, name));
+    }
     public static void register() {
         DcdaeTools.LOGGER.debug("Registering Mod Blocks for " + DcdaeTools.MOD_ID);
 
