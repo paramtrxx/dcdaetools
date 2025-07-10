@@ -15,7 +15,7 @@ public class DcdaeTools implements ModInitializer {
 	@Override
 	public void onInitialize() {
 		ModItemGroups.registerItemGroups();
-		ModItems.register();
+		ModItems.registerItems();
 		ModBlocks.register();
 	}
 }
