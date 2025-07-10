@@ -1,7 +1,6 @@
 package dcdae.dcdaetools.item;
 
 import dcdae.dcdaetools.DcdaeTools;
-import net.minecraft.component.type.FoodComponent;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -17,10 +16,7 @@ public class ModItems {
 
     public static final Item CHOCOLATE = registerItem("chocolate", Item::new, new Item.Settings()
             .maxCount(64)
-            .food(new FoodComponent.Builder()
-                    .nutrition(4)
-                    .saturationModifier(2.0f)
-                    .build()));
+            .food(ModFoodComponents.CHOCOLATE));
 
     public static final Item CHOCOLATE_BANANA = registerItem("chocolate_banana", Item::new,
             new Item.Settings()
