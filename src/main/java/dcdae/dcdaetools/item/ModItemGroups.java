@@ -20,6 +20,7 @@ public class ModItemGroups {
                     .entries((context, entries) -> {
                         entries.add(ModBlocks.CHOCOLATE_BLOCK);
                         entries.add(ModItems.CHOCOLATE);
+                        entries.add(ModItems.CHOCOLATE_BANANA);
                         entries.add(ModItems.RUBY);
                         entries.add(ModBlocks.RUBY_BLOCK);
                     })
