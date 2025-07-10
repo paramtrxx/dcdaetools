@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "dcdaetools:ruby_block",
+    "dcdaetools:chocolate_block"
+  ]
+}

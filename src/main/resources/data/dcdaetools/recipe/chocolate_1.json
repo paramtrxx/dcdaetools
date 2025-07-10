@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "dcdaetools:chocolate",
+  "key": {
+    "#": "minecraft:cocoa_beans"
+  },
+  "pattern": [
+    "## ",
+    "## ",
+    "   "
+  ],
+  "result": {
+    "count": 8,
+    "id": "dcdaetools:chocolate"
+  }
+}
