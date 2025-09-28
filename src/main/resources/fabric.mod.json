@@ -3,12 +3,12 @@
 	"id": "dcdaetools",
 	"version": "${version}",
 	"name": "Dcdae Tools",
-	"description": "Это мод для n`th production. Всего лишь тестовая версия, ничего особенного.",
+	"description": "Это мод от n`th production. Добавляет пару предметов, ничего особенного.",
 	"authors": [
 		"ParamtrX, chengo"
 	],
 	"contact": {
-		"sources": "https://github.com/dscrmnnt/dcdae-tools"
+		"sources": "https://github.com/paramtrxx/dcdaetools"
 	},
 	"license": "MIT",
 	"icon": "assets/dcdaetools/icon.png",
@@ -28,8 +28,8 @@
 		"dcdaetools.mixins.json"
 	],
 	"depends": {
-		"fabricloader": ">=0.16.14",
-		"minecraft": "~1.21.5",
+		"fabricloader": ">=0.17.2",
+		"minecraft": "~1.21.8",
 		"java": ">=21",
 		"fabric-api": "*"
 	},
