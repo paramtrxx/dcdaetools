@@ -1,17 +1,15 @@
 {
-  "type": "minecraft:crafting_shapeless",
+  "type": "minecraft:crafting_shaped",
   "category": "misc",
-  "pattern": [
-    "CB"
-  ],
   "key": {
-    "C": {
-      "item": "dcdaetools:chocolate"
-    },
-    "B": {
-      "item": "fishofthieves:banana"
-    }
+    "C": "dcdaetools:chocolate",
+    "B": "fishofthieves:banana"
   },
+  "pattern": [
+    "CB ",
+    "   ",
+    "   "
+  ],
   "result": {
     "count": 1,
     "id": "dcdaetools:chocolate_banana"
