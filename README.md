@@ -1,2 +1,3 @@
-# dcdaetools
-Мод для n`th production
+# Dcdae Tools
+### Мод от n`th production. Добавляет всего пару предметов. Возможно в будущем, он будет более чем модом на предметы..
+![](https://i.postimg.cc/gJnYkrqp/2025-06-26-15-31-25.png)
